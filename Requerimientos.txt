@@ -1,0 +1,2 @@
+﻿12.	Implemente el resto las operaciones CRUD y la persistencia de los datos utilizando un motor de bases de
+	datos relacionales, y como tecnología de acceso a datos ADO .NET ó Entity Framework.

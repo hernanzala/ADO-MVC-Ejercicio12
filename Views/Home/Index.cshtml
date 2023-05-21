@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ADO.Models.Articulo>
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <div>
+        <h2>Listado de Productos</h2>
+
+
+        <table class="table">
+        
+            <tr>
+                <th>Codigo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Borrar</th>
+                <th>Modificar</th>
+            </tr>
+           @foreach (var articulo in Model)
+            {
+                <tr>
+                    <td>@articulo.Codigo</td>
+                    <td>@articulo.Descripcion</td>
+                    <td>@articulo.Precio</td>
+
+                    <td><a href="/Home/Baja?pCodigo=@articulo.Codigo" class="bi bi-trash"></a></td>
+                    <td><a href="/Home/Modificacion?pCodigo=@articulo.Codigo">Modificar</a></td>
+                </tr>
+                    
+
+
+            }
+        </table>
+        <br />
+         <a href="/Home/Alta" type="button" class="btn btn-primary btn-lg">CREAR ARTICULO</a>
+        
+    </div>
+</body>
+</html>
+
